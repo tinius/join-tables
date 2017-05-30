@@ -1,0 +1,28 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "merge_csv.js",
+  "scripts": {
+
+    "compile": "rollup index.js --format cjs --output dist/join_tables.js",
+    "merge": "./node_modules/.bin/babel-node --presets es2015 index.js"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^1.2.0",
+    "csv-stringify": "^1.0.4",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "bin": {
+    "join-tables": "dist/join_tables.js"
+  }
+}
