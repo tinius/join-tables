@@ -25,7 +25,7 @@ try {
 	const key = args.key || 'id'
 	const keep = args.keep ? args.keep.split(',') : []
 	const outFile = args.out
-	const json = args.json || (outFile.endsWith('json') ? true : false)
+	const json = args.json || (outFile && outFile.endsWith('json') ? true : false)
 
 	const columns = Array.from(new Set(data.map(table => Object.keys(table[0])).reduce(flatten)))
 
@@ -52,8 +52,8 @@ try {
 
 } catch (err) {
 
-	console.err(err)
-	console.error('Incorrect or missing arguments. Usage:')
-	console.error('join-tables [--key=KEYCOLUMN --out=OUTFILE] INFILE_1 INFILE_2 [INFILE_3 ...]')
+	console.error('error: ' + err.message)
+	console.error('There probably are incorrect or missing arguments. Usage:')
+	console.error('join-tables [--key=KEYCOLUMN --out=OUTFILE --json=false] INFILE_1 INFILE_2 [INFILE_3 ...]')
 
 }
