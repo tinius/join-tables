@@ -22,7 +22,7 @@ try {
 			return fn.endsWith('csv') ? sync(fs.readFileSync(fn), { columns : true }) : JSON.parse(fs.readFileSync(fn))
 		})
 
-	const key = args.key
+	const key = args.key || 'id'
 	const keep = args.keep ? args.keep.split(',') : []
 	const outFile = args.out
 	const json = args.json || (outFile.endsWith('json') ? true : false)
