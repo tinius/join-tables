@@ -52,6 +52,7 @@ try {
 
 } catch (err) {
 
+	console.err(err)
 	console.error('Incorrect or missing arguments. Usage:')
 	console.error('join-tables [--key=KEYCOLUMN --out=OUTFILE] INFILE_1 INFILE_2 [INFILE_3 ...]')
 

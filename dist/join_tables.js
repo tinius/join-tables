@@ -27,7 +27,7 @@ try {
 			return fn.endsWith('csv') ? sync(fs.readFileSync(fn), { columns : true }) : JSON.parse(fs.readFileSync(fn))
 		});
 
-	const key = args.key;
+	const key = args.key || 'id';
 	const keep = args.keep ? args.keep.split(',') : [];
 	const outFile = args.out;
 	const json = args.json || (outFile.endsWith('json') ? true : false);
@@ -57,6 +57,7 @@ try {
 
 } catch (err) {
 
+	console.err(err);
 	console.error('Incorrect or missing arguments. Usage:');
 	console.error('join-tables [--key=KEYCOLUMN --out=OUTFILE] INFILE_1 INFILE_2 [INFILE_3 ...]');
 
