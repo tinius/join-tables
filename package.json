@@ -4,16 +4,15 @@
   "description": "",
   "main": "merge_csv.js",
   "scripts": {
-
-    "compile": "rollup index.js --format cjs --output dist/join_tables.js",
+    "compile": "rollup index.js --format cjs --banner '#!/usr/bin/env node' --output dist/join_tables.js",
     "merge": "./node_modules/.bin/babel-node --presets es2015 index.js"
-
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "csv-parse": "^1.2.0",
     "csv-stringify": "^1.0.4",
+    "into-stream": "^3.1.0",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
