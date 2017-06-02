@@ -2,9 +2,9 @@
   "name": "data",
   "version": "1.0.0",
   "description": "",
-  "main": "merge_csv.js",
+  "main": "dist/join_tables.js",
   "scripts": {
-    "compile": "rollup index.js --format cjs --banner '#!/usr/bin/env node' --output dist/join_tables.js",
+    "compile": "rollup index.js --format cjs --output dist/join_tables.js; rollup cli.js --format cjs --banner '#!/usr/bin/env node' --output dist/join_tables_cli.js",
     "merge": "./node_modules/.bin/babel-node --presets es2015 index.js"
   },
   "author": "",
@@ -22,6 +22,6 @@
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "bin": {
-    "join-tables": "dist/join_tables.js"
+    "join-tables": "dist/join_tables_cli.js"
   }
 }
